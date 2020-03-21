@@ -181,7 +181,7 @@ oraz prezentację jego wyniku (❌);
 
 ## Podzadania do wykonania
 
-W pliku `odmiana.py`:
+W pliku `utils.py`:
 
 1. Dopisać do regexpu `_BEZ_KOŃCÓWKI_ODMIANY`
 rozpoznawanie końcówek odmiany rzeczowników
@@ -205,12 +205,12 @@ i przymiotników. Uwagi:
     usuwanie znaków diakrytycznych:
     *pan Maciek*:*pana Maćka*.
 
-2. Plik `odmiana.py` zawiera testy do podzadania
+2. Plik `utils.py` zawiera testy do podzadania
 opisanego w powyższym punkcie. Do dalszych podzadań
 można przejść, jeśli jego wykonanie:
 
     ```
-    python3 odmiana.py
+    python3 utils.py
     ```
 
 przebiegnie bez błędów.
@@ -279,7 +279,7 @@ i [tu](https://prod.ceidg.gov.pl/CEIDG/ceidg.public.ui/SearchDetails.aspx?Id=e82
 
 W sprawozdaniu zamieścić:
 
-1. Zawartość pliku `odmiana.py`.
+1. Zawartość pliku `utils.py`.
 
 2. Zawartość pliku `normalizacja.py`;
 
