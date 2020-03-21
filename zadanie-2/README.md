@@ -183,7 +183,7 @@ oraz prezentację jego wyniku (❌);
 
 W pliku `utils.py`:
 
-1. Dopisać do regexpu `_BEZ_KOŃCÓWKI_ODMIANY`
+1. Dopisać do regexpu `_BEZ_DŁUŻSZEJ_KOŃCÓWKI`
 rozpoznawanie końcówek odmiany rzeczowników
 i przymiotników. Uwagi:
 
