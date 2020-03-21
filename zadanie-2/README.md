@@ -207,12 +207,12 @@ i przymiotników. Uwagi:
 
 2. Plik `utils.py` zawiera testy do podzadania
 opisanego w powyższym punkcie. Do dalszych podzadań
-można przejść, jeśli jego wykonanie:
+można przejść, jeśli jego wykonanie przebiegnie
+bez błędów:
 
     ```
     python3 utils.py
     ```
-przebiegnie bez błędów.
 
 W pliku `normalizacja.py`:
 
@@ -241,12 +241,12 @@ tak, żeby zamieniała:
 
 3. Plik `normalizacja.py` zawiera testy do podzadań
 opisanych w powyższych dwóch punktach. Do dalszych
-podzadań można przejść, jeśli jego wykonanie:
+podzadań można przejść, jeśli jego wykonanie
+przebiegnie bez błędów:
 
     ```
     python3 normalizacja.py
     ```
-przebiegnie bez błędów.
 
 4. Stworzyć plik z bazą danych poprzez wydanie polecenia
 
