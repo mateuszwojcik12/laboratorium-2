@@ -281,7 +281,7 @@ i [tu](https://prod.ceidg.gov.pl/CEIDG/ceidg.public.ui/SearchDetails.aspx?Id=e82
 
 W sprawozdaniu zamieścić:
 
-1. Zawartość pliku `utils.py`.
+1. Zawartość pliku `utils.py`;
 
 2. Zawartość pliku `normalizacja.py`;
 
