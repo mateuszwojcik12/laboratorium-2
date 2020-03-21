@@ -102,9 +102,13 @@ których wartość interesuje użytkownika, oraz
 interpretację pytania, np.
 
 W której **katedrze** pracuje *doktor Ciura*?
+
 Jaki jest adres **email** pana *dziekana*?
+
 Jacy **profesorowie** są pracownikami *F-3*?
+
 Kto ma **telefon** o numerze *26-66*?
+
 Czy znasz kogoś o imieniu *Filip*?
 
 Powyższym pytaniom odpowiadają następujące
