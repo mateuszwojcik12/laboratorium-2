@@ -238,7 +238,7 @@ tak, żeby zamieniała:
    * wystąpienia dwóch cyfr, ciągu białych znaków
    lub znaków minus i dwóch cyfr, opcjonalnie
    poprzedzonych przez znaki `'628'`, `'12 628'`,
-   `'+48 12 628`' itp., na:
+   `'+48 12 628'` itp., na:
 
    * cztery cyfry, np. `'21 05'`, `'21-05'`,
    `'628 - 21 - 05'` → `'2105'`.
