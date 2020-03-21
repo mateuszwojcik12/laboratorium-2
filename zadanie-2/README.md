@@ -9,23 +9,23 @@ czerpiąc odpowiedzi z niewielkiej bazy danych.
 Program powinien sensownie odpowiadać np.
 na takie pytania:
 
-    ```
+```
     W której katedrze pracuje doktor Ciura?
     Jaki jest adres email pana dziekana?
     Jacy profesorowie są pracownikami F-3?
     Kto ma telefon o numerze 26-66?
     Czy znasz kogoś o imieniu Filip?
     Parlez-vous français ?
-    ```
+```
 
 Oczywiście gdzieś trzeba postawić granicę,
 bo od żadnego programu nie można się spodziewać
 zadowalających odpowiedzi na wszelkie możliwe
 pytania:
 
-    ```
+```
     Jakie było najgłupsze pytanie, które ci kiedykolwiek zadano?
-    ```
+```
 
 Sztuka polega na rozsądnym odpowiadaniu na jak
 najwięcej pytań bez nadmiernego komplikowania
@@ -47,7 +47,7 @@ znajdą sposób, żeby przekazać sobie, o co chodzi.
 Dane o pracownikach będziemy przechowywać w tabeli
 bazy danych SQLite o następującym schemacie:
 
-    ```sql
+```sql
     CREATE TABLE Pracownicy(
         docid       INTEGER PRIMARY KEY
         , jednostka TEXT
@@ -55,7 +55,7 @@ bazy danych SQLite o następującym schemacie:
         , email     TEXT
         , telefon   TEXT
     );
-    ```
+```
 
 Do wyszukiwania danych w tabeli `Pracownicy`
 posłuży wirtualna tabela `PracownicyFTS`
@@ -64,13 +64,13 @@ końcówek odmiany i polskich znaków diakrytycznych
 oraz sprowadzone do małych liter wyrazy, służące
 do wyszukiwania:
 
-    ```sql
+```sql
     CREATE VIRTUAL TABLE PracownicyFTS USING fts4(dane);
-    ```
+```
 
 Na przykład temu wierszowi tabeli `Pracownicy`:
 
-    ```sql
+```sql
     INSERT INTO Pracownicy(
         docid
         , jednostka
@@ -84,15 +84,15 @@ Na przykład temu wierszowi tabeli `Pracownicy`:
         , 'marcin.ciura@pk.edu.pl'
         , ''
     );
-    ```
+```
 
 odpowiada następujący wiersz tabeli
 `PracownicyFTS`:
 
-    ```sql
+```sql
     INSERT INTO PracownicyFTS(docid, dane)
     VALUES(77, 'teleinformatyk f3 dr inz marcin ciur');
-    ```
+```
 
 Olbrzymia większość pytań do naszego programu
 zawiera określenie *wartości* pewnych kolumn,
@@ -110,7 +110,7 @@ Czy znasz kogoś o imieniu *Filip*?
 Powyższym pytaniom odpowiadają następujące
 zapytania SQL:
 
-    ```sql
+```sql
     SELECT pracownik, jednostka
     FROM Pracownicy JOIN PracownicyFTS USING(docid)
     WHERE PracownicyFTS MATCH 'dr ciur';
@@ -130,7 +130,7 @@ zapytania SQL:
     SELECT pracownik
     FROM Pracownicy JOIN PracownicyFTS USING(docid)
     WHERE PracownicyFTS MATCH 'filip';
-    ```
+```
 
 ## Implementacja
 
@@ -212,7 +212,6 @@ można przejść, jeśli jego wykonanie:
     ```
     python3 utils.py
     ```
-
 przebiegnie bez błędów.
 
 W pliku `normalizacja.py`:
@@ -247,7 +246,6 @@ podzadań można przejść, jeśli jego wykonanie:
     ```
     python3 normalizacja.py
     ```
-
 przebiegnie bez błędów.
 
 4. Stworzyć plik z bazą danych poprzez wydanie polecenia
@@ -268,10 +266,10 @@ warunku do zapytania SQL, bo ten paskudny zwyczaj
 otwiera drogę do ataków, znanych jako *SQL injection*.
 Zamiast tego należy użyć parametru:
 
-    ```python
+```python
     zapytanie_sql = '…WHERE PracownicyFTS MATCH ?'
     connection.execute(zapytanie_sql, [tekst_warunku])
-    ```
+```
 
 Więcej wiadomości o SQL injection
 [tu](https://xkcd.com/327/)
