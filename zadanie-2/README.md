@@ -267,17 +267,16 @@ W pliku `odpowiedz.py`:
 3. Uzupełnić funkcję `odpowiedz()`.
 Pod żadnym pozorem nie należy wstawiać tekstu
 warunku do zapytania SQL, bo ten paskudny zwyczaj
-otwiera drogę do ataków, znanych jako *SQL injection*.
+otwiera drogę do ataków, znanych jako *SQL injection*
+(więcej wiadomości o *SQL injection*
+[tu](https://xkcd.com/327/)
+i [tu](https://prod.ceidg.gov.pl/CEIDG/ceidg.public.ui/SearchDetails.aspx?Id=e82735cd-bc2b-4ac0-8bac-a1dc54d8c013)).
 Zamiast tego należy użyć parametru:
 
 ```python
     zapytanie_sql = '…WHERE PracownicyFTS MATCH ?'
     connection.execute(zapytanie_sql, [tekst_warunku])
 ```
-
-Więcej wiadomości o SQL injection
-[tu](https://xkcd.com/327/)
-i [tu](https://prod.ceidg.gov.pl/CEIDG/ceidg.public.ui/SearchDetails.aspx?Id=e82735cd-bc2b-4ac0-8bac-a1dc54d8c013).
 
 W sprawozdaniu zamieścić:
 
