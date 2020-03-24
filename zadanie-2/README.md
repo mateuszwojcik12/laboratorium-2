@@ -270,7 +270,9 @@ warunku do zapytania SQL, bo ten paskudny zwyczaj
 otwiera drogę do ataków, znanych jako *SQL injection*
 (więcej wiadomości o *SQL injection*
 [tu](https://xkcd.com/327/)
-i [tu](https://prod.ceidg.gov.pl/CEIDG/ceidg.public.ui/SearchDetails.aspx?Id=e82735cd-bc2b-4ac0-8bac-a1dc54d8c013)).
+i [tu](https://prod.ceidg.gov.pl/CEIDG/ceidg.public.ui/SearchDetails.aspx?Id=e82735cd-bc2b-4ac0-8bac-a1dc54d8c013);
+z kolumnami nie da się tak zrobić,
+trzeba wkleić ich nazwy do napisu `zapytanie_sql`).
 Zamiast tego należy użyć parametru:
 
 ```python
@@ -280,13 +282,14 @@ Zamiast tego należy użyć parametru:
 
 W sprawozdaniu zamieścić:
 
-1. Zawartość pliku `utils.py`;
+1. Regexp `_BEZ_DŁUŻSZEJ_KOŃCÓWKI` z pliku `utils.py`;
 
-2. Zawartość pliku `normalizacja.py`;
+2. Regexpy `_JEDNOSTKA_RE` i `_TELEFON_RE` z pliku `normalizacja.py`;
 
-3. Zawartość pliku `odpowiedz.py`;
+3. Funkcję `odpowiedz()` z pliku `odpowiedz.py`;
 
 4. Pięć przykładowych pytań użytkownika
+(innych niż w tej instrukcji)
 i odpowiedzi na nie.
 
 Opracowano na podstawie zadania 5.
