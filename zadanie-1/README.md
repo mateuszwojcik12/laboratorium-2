@@ -21,7 +21,7 @@ liczby pojedynczej. Uwagi:
     (różnica z dopełniaczem zachodzi w odmianie
     imion zakończonych na -a) kim? o kim? hej!
 
-2. Pobrać plik [slownik.zip](https://drive.google.com/file/d/1kHEp0gL8gDlIA7YBifO6vP3gMJLhaWN2/view?usp=sharing) i przejrzeć
+2. Pobrać plik [slownik.zip](https://drive.google.com/file/d/1DPQ1Dx5-j6mt8x_vC-u22H-h-qzVDgfh/view?usp=sharing) i przejrzeć
 treść rozpakowanego pliku `slownik.txt`, w którym
 znajdują się ponad 4 miliony odmienionych wyrazów
 polskich.
