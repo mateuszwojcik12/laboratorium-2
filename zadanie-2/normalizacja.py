@@ -8,7 +8,7 @@ import re
 # * \b pasuje do początku lub końca wyrazu, czyli granicy
 #   między znakiem alfanumerycznym i nie-alfanumerycznym
 # * [\s-]+ pasuje do ciągu białych znaków lub znaków minusa.
-_JEDNOSTKA_RE = re.compile(r"\b(...)[\s-]+(...)\b")
+_JEDNOSTKA_RE = re.compile(r"\b(...)[-+.^:,]+|[\s-]+(...)\b")
 
 # TU(2): Uzupełnić regexp tak, żeby (grupa 1) + (grupa 2)
 # dawała znormalizowany numer telefonu.
