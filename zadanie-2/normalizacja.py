@@ -8,7 +8,7 @@ import re
 # * \b pasuje do początku lub końca wyrazu, czyli granicy
 #   między znakiem alfanumerycznym i nie-alfanumerycznym
 # * [\s-]+ pasuje do ciągu białych znaków lub znaków minusa.
-_JEDNOSTKA_RE = re.compile(r'\b(...)[\s-]+(...)\b')
+_JEDNOSTKA_RE = re.compile(r"\b(...)[\s-]+(...)\b")
 
 # TU(2): Uzupełnić regexp tak, żeby (grupa 1) + (grupa 2)
 # dawała znormalizowany numer telefonu.
@@ -27,10 +27,16 @@ _TELEFON_RE = re.compile(
 
 def normalizuj_kody_jednostek(tekst):
     """Zwraca `tekst` ze znormalizowanymi kodami jednostek.
+    wystąpienia od jednej do dwóch liter, ciągu białych znaków lub znaków minus i od jednej do dwóch cyfr
 
     >>> normalizuj_kody_jednostek('F--3 ka  3 Ś-01 L 9a L a9')
     'F3 ka3 Ś01 L 9a L a9'
+
+
+    >>> normalizuj_kody_jednostek('Ś 2  PN-5  I - 01')
+    'Ś2 PN5 I01'
     """
+
     return _JEDNOSTKA_RE.sub(r'\1\2', tekst)
 
 

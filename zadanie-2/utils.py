@@ -34,7 +34,8 @@ _BEZ_RUCHOMEGO_E = re.compile('^(.+[^i])e([ćlłńr])$')
 # Regularne końcówki odmiany rzeczowników i przymiotników,
 # oprócz końcówek złożonych z jednej samogłoski.
 # TU(1): uzupełnić regexp.
-_BEZ_DŁUŻSZEJ_KOŃCÓWKI = re.compile('^(.+)(ego|emu)$')
+#odmiana rzeczownika i przymiotnika (końcówki długie)
+_BEZ_DŁUŻSZEJ_KOŃCÓWKI = re.compile('^(.+)(ego|emu|owi|em|im|ym|ej|ich|ych|im|ym|imi|ymi|owie|ów|om|ami|ach)$')
 
 
 def _bez_końcówki(wyraz):
@@ -133,6 +134,8 @@ def podziel_i_odetnij_końcówki(pytanie):
     >>> podziel_i_odetnij_końcówki('Maria Marii')
     [['mar'], ['mar']]
     """
+
+
     wynik = []
     for wyraz in _minuskułą_i_podzielone(pytanie):
         wynik.append([_bez_znaków_diakrytycznych(rdzeń) for rdzeń in _bez_końcówki(wyraz)])
