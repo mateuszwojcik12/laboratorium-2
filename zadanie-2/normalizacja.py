@@ -8,7 +8,8 @@ import re
 # * \b pasuje do początku lub końca wyrazu, czyli granicy
 #   między znakiem alfanumerycznym i nie-alfanumerycznym
 # * [\s-]+ pasuje do ciągu białych znaków lub znaków minusa.
-_JEDNOSTKA_RE = re.compile(r"\b(...)[-+.^:,]+|[\s-]+(...)\b")
+_JEDNOSTKA_RE = re.compile(r'\b([a-ząćęłńóśźż]{1,2})([0-9]+)[\s-]+\b', re.IGNORECASE)
+#_JEDNOSTKA_RE = re.compile(r'\b(...)[-+.^:,]+|[\s-]+(...)\b')
 
 # TU(2): Uzupełnić regexp tak, żeby (grupa 1) + (grupa 2)
 # dawała znormalizowany numer telefonu.
@@ -21,8 +22,8 @@ _JEDNOSTKA_RE = re.compile(r"\b(...)[-+.^:,]+|[\s-]+(...)\b")
 # Wskazówki:
 # * [\s-]+ pasuje do ciągu białych znaków lub znaków minusa.
 # * (?:...) tworzy grupę, której nie zostanie nadany numer.
-_TELEFON_RE = re.compile(
-    r'(?:...)?([0-9]{2})[\s-]*([0-9]{2})')
+#_TELEFON_RE = re.compile(r'(?:...)?([0-9]{2})[\s-]*([0-9]{2})')
+_TELEFON_RE = re.compile(r'(?:...)628[\s-]*|12[\s-]*628[\s-]*')
 
 
 def normalizuj_kody_jednostek(tekst):
@@ -33,7 +34,7 @@ def normalizuj_kody_jednostek(tekst):
     'F3 ka3 Ś01 L 9a L a9'
 
 
-    >>> normalizuj_kody_jednostek('Ś 2  PN-5  I - 01')
+    >>> normalizuj_kody_jednostek('Ś 2 PN-5 I - 01')
     'Ś2 PN5 I01'
     """
 
