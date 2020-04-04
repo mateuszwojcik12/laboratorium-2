@@ -22,8 +22,8 @@ _JEDNOSTKA_RE = re.compile(r'\b([a-ząćęłńóśźż]{1,2})[\s-]+([0-9]+)\b', 
 # Wskazówki:
 # * [\s-]+ pasuje do ciągu białych znaków lub znaków minusa.
 # * (?:...) tworzy grupę, której nie zostanie nadany numer.
-#_TELEFON_RE = re.compile(r'(?:...)?([0-9]{2})[\s-]*([0-9]{2})')
-_TELEFON_RE = re.compile(r'(?:...)628[\s-]*|12[\s-]*628[\s-]*')
+_TELEFON_RE = re.compile(r"[+-]48[\s-]*12[\s-]*628[\s-]*|12[\s-]*628[\s-]*|628[\s-]*|([0-9]{2})[\s-]*([0-9]{2})")
+#_TELEFON_RE = re.compile(r'(?:...)628[\s-]*|12[\s-]*628[\s-]*')
 
 
 def normalizuj_kody_jednostek(tekst):
