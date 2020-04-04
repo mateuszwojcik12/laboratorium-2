@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import collections
-import readline
+#import readline
 import sqlite3
 
 import normalizacja
@@ -15,6 +15,9 @@ Zapytanie = collections.namedtuple('Zapytanie', 'kolumny tekst_warunku')
 SYNONIMY = {
     'doktor': 'dr',
     'habilitowan': 'hab',
+    'profesor': 'prof',
+    'magister': 'mgr',
+    'inzynier': 'inz',
 }
 
 PRACOWNIK = 'pracownik'
@@ -29,6 +32,8 @@ KOLUMNY = {
     'katedr': JEDNOSTKA,
     'numer': TELEFON,
     'telefon': TELEFON,
+    'email': EMAIL,
+    'synonimy': SYNONIMY,
 }
 
 ZNACZĄCE_WYRAZY = set()
@@ -64,8 +69,12 @@ def odpowiedz(zapytanie):
     """Odpowiada na dane `zapytanie`."""
 
     # TU(3): Uzupełnić funkcję.
-    zapytanie_sql = f"""
-        """
+    
+    col = ','.join(zapytanie.kolumny)
+    zapytanie_sql = f"""SELECT {col} FROM Pracownicy JOIN PracownicyFTS USING(docid) WHERE PracownicyFTS MATCH ?;"""
+    cursor = connection.execute(zapytanie_sql, [zapytanie.tekst_warunku])
+    print(cursor.fetchall())
+
 
 
 def main():
