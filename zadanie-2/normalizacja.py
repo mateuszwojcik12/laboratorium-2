@@ -8,7 +8,7 @@ import re
 # * \b pasuje do początku lub końca wyrazu, czyli granicy
 #   między znakiem alfanumerycznym i nie-alfanumerycznym
 # * [\s-]+ pasuje do ciągu białych znaków lub znaków minusa.
-_JEDNOSTKA_RE = re.compile(r'\b([a-ząćęłńóśźż]{1,2})([0-9]+)[\s-]+\b', re.IGNORECASE)
+_JEDNOSTKA_RE = re.compile(r'\b([a-ząćęłńóśźż]{1,2})[\s-]+([0-9]+)\b', re.IGNORECASE)
 #_JEDNOSTKA_RE = re.compile(r'\b(...)[-+.^:,]+|[\s-]+(...)\b')
 
 # TU(2): Uzupełnić regexp tak, żeby (grupa 1) + (grupa 2)
